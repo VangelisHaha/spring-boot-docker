@@ -1,0 +1,10 @@
+version: '2'
+services:
+  # 测试
+  spring-boot-docker-demo:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    container_name: spring-boot-docker-demo
+    image: spring-boot-docker-demo
