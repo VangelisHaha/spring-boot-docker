@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   # 测试
   spring-boot-docker-demo:
@@ -8,3 +8,7 @@ services:
     restart: always
     container_name: spring-boot-docker-demo
     image: spring-boot-docker-demo
+    # 加入这一段
+    web:
+      environment:
+        - JAVA_OPTIONS=-server -Xms128m -Xmx128m -Xss256k -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseParallelOldGC

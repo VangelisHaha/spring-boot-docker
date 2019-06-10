@@ -7,5 +7,5 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 EXPOSE 8080
 
 ADD ./target/spring-boot-docker-1.0.jar ./
-
-CMD java -Djava.security.egd=file:/dev/./urandom -jar -server -Xms128m -Xmx128m -Xss256k -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseParallelOldGC    spring-boot-docker-1.0.jar
+# 使用$JAVA_OPTIONS 环境变量来替代之前的配置
+CMD java -Djava.security.egd=file:/dev/./urandom -jar $JAVA_OPTIONS  spring-boot-docker-1.0.jar
